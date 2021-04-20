@@ -1,0 +1,27 @@
+# Optimal finite-difference operators for arbitrarily sampled data 
+# Geophysics (2020)
+# Erik Koene & Johan Robertsson
+# This source code has an SEG copyright in "disclaimer.txt"
+
+## INFO
+The files in this folder show some MATLAB implementations of the Remez' 
+multiple exchange algorithm that were made for the paper:
+"Optimal finite-difference operators for arbitrarily sampled data"
+
+## PROVIDED FILES
+* FD_remez_1stag_{abso/relative/groupvel} obtain a symmetric FD operator at very high speed (used for Table 2 and Table 3), using the fact that a symmetric FD operator creates an error that is only real or imaginary (but not both), for which we may use the normal Remez algorithm rather than a complex extension of it.
+* FD_{tot,rel,gv}_version obtain an arbitrary FD operator, for arbitrary 'n' and arbitrarily sampled data.
+
+## NON-NEW FILES
+* fdweights.m simply implements an algorithm to obtain the Taylor coefficients.
+* FD_hicks.m is our implements of Hicks' coefficients due to a Kaiser windowed sinc function.
+
+## Reproduce figures & tables
+Figures can be recreated by running the associated figure*.m files.
+Tables can be recreated by running the associated table*.m files.
+The output that should be produced by table2.m and table3.m is attached as table2_r.txt and table3_r.txt as reference.
+
+## Reproduce examples
+To reproduce the first example (uniform 1-D staggered grid) run: example_uniform_grid_1D.m
+To reproduce the second example (irregular 1-D grid) run: example_variable_grid_1D.m
+To reproduce the third example (2-D staggered source injection) run : example_seismic_injection.m
